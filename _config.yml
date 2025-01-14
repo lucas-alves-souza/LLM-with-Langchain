@@ -42,6 +42,10 @@ parse:
     # including those that are enabled by default!
     - amsmath
 
+jupyter:
+  execute:
+    allow_errors: true
+    execution_timeout: 60
 
 # LaTeX-specific settings
 latex:
