@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=109105fe" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=949a1ff5" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
@@ -413,16 +413,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-the-output-portuguese">4.4. Generating the Output (portuguese)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#templates-and-prompt-engineering">4.5. Templates and Prompt Engineering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-prompt-engineering">4.5.1. Exploring Prompt Engineering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-results">4.5.2. Improving Results</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-prompts">4.5.3. Where to Find Prompts</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#message-format">4.6. Message Format</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msg-input-messages">4.6.1. <code class="docutils literal notranslate"><span class="pre">msg</span></code>: Input Messages</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#templates-and-prompt-engineering">4.5. Templates and Prompt Engineering</a></li>
 </ul>
 </li>
 </ul>
@@ -694,25 +685,10 @@ WARNING:transformers_modules.microsoft.Phi-3-mini-4k-instruct.0a67737cc96d255423
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;generated_text&#39;: &#39; e como ela difere da computação clássica.\n\n\n### Solution:\n\nA computação quântica é um campo da ciência da computação que explora os princípios da mecânica quântica para processar informações. Ao contrário da computação clássica, que usa bits binários (0 ou 1) para representar dados, a computação quântica utiliza qubits, que pode&#39;}]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> e como ela difere da computação clássica.
-
-
-### Solution:
-
-A computação quântica é um campo da ciência da computação que explora os princípios da mecânica quântica para processar informações. Ao contrário da computação clássica, que usa bits binários (0 ou 1) para representar dados, a computação quântica utiliza qubits, que pode
 </pre></div>
 </div>
 </div>
@@ -721,178 +697,6 @@ A computação quântica é um campo da ciência da computação que explora os 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Quem foi a primeira pessoa no espaço?&quot;</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="o">**</span><span class="n">generation_args</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-15-1db7a4ba7888&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Quem foi a primeira pessoa no espaço?&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="o">**</span><span class="n">generation_args</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/transformers/pipelines/text_generation.py</span> in <span class="ni">__call__</span><span class="nt">(self, text_inputs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span>                 <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">chats</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">272</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">text_inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span> 
-<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="k">def</span><span class="w"> </span><span class="nf">preprocess</span><span class="p">(</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/transformers/pipelines/base.py</span> in <span class="ni">__call__</span><span class="nt">(self, inputs, num_workers, batch_size, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1299</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1300</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1301</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_single</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">preprocess_params</span><span class="p">,</span> <span class="n">forward_params</span><span class="p">,</span> <span class="n">postprocess_params</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1302</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1303</span>     <span class="k">def</span><span class="w"> </span><span class="nf">run_multi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">preprocess_params</span><span class="p">,</span> <span class="n">forward_params</span><span class="p">,</span> <span class="n">postprocess_params</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/transformers/pipelines/base.py</span> in <span class="ni">run_single</span><span class="nt">(self, inputs, preprocess_params, forward_params, postprocess_params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1306</span>     <span class="k">def</span><span class="w"> </span><span class="nf">run_single</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">preprocess_params</span><span class="p">,</span> <span class="n">forward_params</span><span class="p">,</span> <span class="n">postprocess_params</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1307</span>         <span class="n">model_inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">preprocess_params</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1308</span>         <span class="n">model_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">model_inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">forward_params</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1309</span>         <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">postprocess</span><span class="p">(</span><span class="n">model_outputs</span><span class="p">,</span> <span class="o">**</span><span class="n">postprocess_params</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1310</span>         <span class="k">return</span> <span class="n">outputs</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/transformers/pipelines/base.py</span> in <span class="ni">forward</span><span class="nt">(self, model_inputs, **forward_params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1206</span>                 <span class="k">with</span> <span class="n">inference_context</span><span class="p">():</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span>                     <span class="n">model_inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_tensor_on_device</span><span class="p">(</span><span class="n">model_inputs</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1208</span>                     <span class="n">model_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward</span><span class="p">(</span><span class="n">model_inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">forward_params</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1209</span>                     <span class="n">model_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_tensor_on_device</span><span class="p">(</span><span class="n">model_outputs</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1210</span>             <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/transformers/pipelines/text_generation.py</span> in <span class="ni">_forward</span><span class="nt">(self, model_inputs, **generate_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span>             <span class="n">generate_kwargs</span><span class="p">[</span><span class="s2">&quot;generation_config&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generation_config</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span> 
-<span class="ne">--&gt; </span><span class="mi">370</span>         <span class="n">generated_sequence</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">attention_mask</span><span class="o">=</span><span class="n">attention_mask</span><span class="p">,</span> <span class="o">**</span><span class="n">generate_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span>         <span class="n">out_b</span> <span class="o">=</span> <span class="n">generated_sequence</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">framework</span> <span class="o">==</span> <span class="s2">&quot;pt&quot;</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py</span> in <span class="ni">decorate_context</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">def</span><span class="w"> </span><span class="nf">decorate_context</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="k">with</span> <span class="n">ctx_factory</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">116</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span> 
-<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="k">return</span> <span class="n">decorate_context</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/transformers/generation/utils.py</span> in <span class="ni">generate</span><span class="nt">(self, inputs, generation_config, logits_processor, stopping_criteria, prefix_allowed_tokens_fn, synced_gpus, assistant_model, streamer, negative_prompt_ids, negative_prompt_attention_mask, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2250</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2251</span>             <span class="c1"># 12. run sample (it degenerates to greedy search when `generation_config.do_sample=False`)</span>
-<span class="ne">-&gt; </span><span class="mi">2252</span>             <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2253</span>                 <span class="n">input_ids</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2254</span>                 <span class="n">logits_processor</span><span class="o">=</span><span class="n">prepared_logits_processor</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/transformers/generation/utils.py</span> in <span class="ni">_sample</span><span class="nt">(self, input_ids, logits_processor, stopping_criteria, generation_config, synced_gpus, streamer, **model_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3249</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3250</span>             <span class="k">if</span> <span class="n">is_prefill</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3251</span>                 <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="p">(</span><span class="o">**</span><span class="n">model_inputs</span><span class="p">,</span> <span class="n">return_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3252</span>                 <span class="n">is_prefill</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">3253</span>             <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1735</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1736</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="c1"># torchrec tests the code consistency with the following code</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1745</span>                 <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1746</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1747</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1748</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1749</span>         <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">~/.cache/huggingface/modules/transformers_modules/microsoft/Phi-3-mini-4k-instruct/0a67737cc96d2554230f90338b163bc6380a2a85/modeling_phi3.py</span> in <span class="ni">forward</span><span class="nt">(self, input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, labels, use_cache, output_attentions, output_hidden_states, return_dict)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1241</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1242</span>         <span class="c1"># decoder outputs consists of (dec_features, layer_state, dec_hidden, dec_attn)</span>
-<span class="ne">-&gt; </span><span class="mi">1243</span>         <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1244</span>             <span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1245</span>             <span class="n">attention_mask</span><span class="o">=</span><span class="n">attention_mask</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1735</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1736</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="c1"># torchrec tests the code consistency with the following code</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1745</span>                 <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1746</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1747</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1748</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1749</span>         <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">~/.cache/huggingface/modules/transformers_modules/microsoft/Phi-3-mini-4k-instruct/0a67737cc96d2554230f90338b163bc6380a2a85/modeling_phi3.py</span> in <span class="ni">forward</span><span class="nt">(self, input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, use_cache, output_attentions, output_hidden_states, return_dict)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1119</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1120</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1121</span>                 <span class="n">layer_outputs</span> <span class="o">=</span> <span class="n">decoder_layer</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1122</span>                     <span class="n">hidden_states</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1123</span>                     <span class="n">attention_mask</span><span class="o">=</span><span class="n">attention_mask</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1735</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1736</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="c1"># torchrec tests the code consistency with the following code</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1745</span>                 <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1746</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1747</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1748</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1749</span>         <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">~/.cache/huggingface/modules/transformers_modules/microsoft/Phi-3-mini-4k-instruct/0a67737cc96d2554230f90338b163bc6380a2a85/modeling_phi3.py</span> in <span class="ni">forward</span><span class="nt">(self, hidden_states, attention_mask, position_ids, past_key_value, output_attentions, use_cache, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">840</span> 
-<span class="g g-Whitespace">    </span><span class="mi">841</span>         <span class="c1"># Self Attention</span>
-<span class="ne">--&gt; </span><span class="mi">842</span>         <span class="n">attn_outputs</span><span class="p">,</span> <span class="n">self_attn_weights</span><span class="p">,</span> <span class="n">present_key_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">self_attn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">843</span>             <span class="n">hidden_states</span><span class="o">=</span><span class="n">hidden_states</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">844</span>             <span class="n">attention_mask</span><span class="o">=</span><span class="n">attention_mask</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1735</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1736</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="c1"># torchrec tests the code consistency with the following code</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1745</span>                 <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1746</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1747</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1748</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1749</span>         <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">~/.cache/huggingface/modules/transformers_modules/microsoft/Phi-3-mini-4k-instruct/0a67737cc96d2554230f90338b163bc6380a2a85/modeling_phi3.py</span> in <span class="ni">forward</span><span class="nt">(self, hidden_states, attention_mask, position_ids, past_key_value, output_attentions, use_cache)</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="n">bsz</span><span class="p">,</span> <span class="n">q_len</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">hidden_states</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span> 
-<span class="ne">--&gt; </span><span class="mi">315</span>         <span class="n">qkv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qkv_proj</span><span class="p">(</span><span class="n">hidden_states</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span>         <span class="n">query_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_heads</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_dim</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span>         <span class="n">query_states</span> <span class="o">=</span> <span class="n">qkv</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="n">query_pos</span><span class="p">]</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1735</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1736</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="c1"># torchrec tests the code consistency with the following code</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1745</span>                 <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1746</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1747</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1748</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1749</span>         <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/linear.py</span> in <span class="ni">forward</span><span class="nt">(self, input)</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> 
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">125</span>         <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">linear</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span> 
-<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="k">def</span><span class="w"> </span><span class="nf">extra_repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -934,188 +738,11 @@ A computação quântica é um campo da ciência da computação que explora os 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="o">**</span><span class="n">generation_args</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> A primeira pessoa a ir ao espaço foi Yuri Gagarin, um cosmonauta soviético. Ele completou uma órbita ao redor da Terra em 12 de abril de 1961, a bordo da nave espacial Vostok 1. Sua missão marcou um momento histórico na exploração espacial e foi um grande passo para a humanidade na conquista do espaço.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">template</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Você entende português?&quot;</span>
-
-<span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;|system|&gt;</span>
-<span class="s2">You are a helpful assistant.&lt;|end|&gt;</span>
-<span class="s2">&lt;|user|&gt;</span>
-<span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;&lt;|end|&gt;</span>
-<span class="s2">&lt;|assistant|&gt;&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-
-<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="o">**</span><span class="n">generation_args</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;O que é IA?&quot;</span>  <span class="c1"># @param {type:&quot;string&quot;}</span>
-
-<span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;|system|&gt;</span>
-<span class="s2">You are a helpful assistant.&lt;|end|&gt;</span>
-<span class="s2">&lt;|user|&gt;</span>
-<span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;&lt;|end|&gt;</span>
-<span class="s2">&lt;|assistant|&gt;&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-
-<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="o">**</span><span class="n">generation_args</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="exploring-prompt-engineering">
-<h3><span class="section-number">4.5.1. </span>Exploring Prompt Engineering<a class="headerlink" href="#exploring-prompt-engineering" title="Permalink to this heading">#</a></h3>
-<p>In addition to slightly modifying the system prompt to make the result more suitable:</p>
-<ul class="simple">
-<li><p>For example, we can add “Answer in 1 sentence” after our question (“What is AI?”).</p></li>
-<li><p>Another example: “Answer in the form of a poem.”</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#prompt = &quot;O que é IA? &quot;  # @param {type:&quot;string&quot;}</span>
-<span class="c1">#prompt = &quot;O que é IA? Responda em 1 frase&quot; # @param {type:&quot;string&quot;}</span>
-<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;O que é IA? Responda em forma de poema&quot;</span> <span class="c1"># @param {type:&quot;string&quot;}</span>
-
-<span class="n">sys_prompt</span> <span class="o">=</span> <span class="s2">&quot;Você é um assistente virtual prestativo. Responda as perguntas em português.&quot;</span>
-
-<span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;|system|&gt;</span>
-<span class="si">{}</span><span class="s2">&lt;|end|&gt;</span>
-<span class="s2">&lt;|user|&gt;</span>
-<span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;&lt;|end|&gt;</span>
-<span class="s2">&lt;|assistant|&gt;&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys_prompt</span><span class="p">,</span> <span class="n">prompt</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
-
-<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="o">**</span><span class="n">generation_args</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Gere um código em python que escreva a sequência de fibonnaci&quot;</span>
-
-<span class="n">sys_prompt</span> <span class="o">=</span> <span class="s2">&quot;Você é um programador experiente. Retorne o código requisitado e forneça explicações breves se achar conveniente&quot;</span>
-
-<span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;|system|&gt;</span>
-<span class="si">{}</span><span class="s2">&lt;|end|&gt;</span>
-<span class="s2">&lt;|user|&gt;</span>
-<span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;&lt;|end|&gt;</span>
-<span class="s2">&lt;|assistant|&gt;&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys_prompt</span><span class="p">,</span> <span class="n">prompt</span><span class="p">)</span>
-
-<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="o">**</span><span class="n">generation_args</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-19-81eee6fc6769&gt;&quot;</span><span class="gt">, line </span><span class="mi">3</span>
-    <span class="n">In</span> <span class="n">addition</span> <span class="n">to</span> <span class="n">slightly</span> <span class="n">modifying</span> <span class="n">the</span> <span class="n">system</span> <span class="n">prompt</span> <span class="n">to</span> <span class="n">make</span> <span class="n">the</span> <span class="n">result</span> <span class="n">more</span> <span class="n">suitable</span><span class="p">:</span>
-       <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
-
-    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-
-        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-
-    <span class="k">return</span> <span class="n">sequence</span>
-
-
-<span class="c1"># Exemplo de uso:</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Quantidade de números da sequência de Fibonacci a serem gerados</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="improving-results">
-<h3><span class="section-number">4.5.2. </span>Improving Results<a class="headerlink" href="#improving-results" title="Permalink to this heading">#</a></h3>
-<p><strong>Exploring Prompt Changes</strong></p>
-<ul>
-<li><p>It may fail depending on the type of request. Various ways to improve the output will be explored.</p></li>
-<li><p>For now, remember to first check if your prompt could be more specific. If even after improving the prompt you are struggling to achieve the expected result (and after experimenting with other parameters), the model may not be suitable for this task.</p>
-<ul>
-<li><blockquote>
-<div><p>Bonus tip for code generation: A suggestion for a convenient prompt when using an LLM as your co-pilot:<br />
-“Refactor using concepts like SOLID, Clean Code, DRY, KISS, and if possible, apply one or more appropriate design patterns aiming for scalability and performance, creating an organized folder structure and separating files accordingly.”<br />
-(Of course, feel free to modify this as needed.)</p>
-</div></blockquote>
-</li>
-</ul>
-</li>
-<li><p>Note: Sometimes, keeping the prompt simple and not overly elaborate works better. Adding too much or including unrelated references can “confuse” the model. Therefore, it’s often useful to add or remove terms incrementally when experimenting to achieve better results.</p></li>
-</ul>
-<p><strong>Exploring Other Models</strong></p>
-<ul class="simple">
-<li><p>In this case, to achieve more accurate results, you could look for larger and more modern models with more parameters (keeping in mind the trade-off between efficiency and response quality) or models specialized in the desired task, such as code generation or conversations/chat.</p>
-<ul>
-<li><p>For example, for code generation, you could use the model <a class="reference external" href="https://huggingface.co/deepseek-ai/deepseek-coder-6.7b-instruct">deepseek-coder 6.7B</a> (or search for others focused on this area).</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="where-to-find-prompts">
-<h3><span class="section-number">4.5.3. </span>Where to Find Prompts<a class="headerlink" href="#where-to-find-prompts" title="Permalink to this heading">#</a></h3>
-<p>Creating your own prompt can be ideal if you’re aiming for very specific cases.<br />
-However, if you’re short on time to experiment (or unsure of the best approach), a good tip is to search for prompts online.</p>
-<p>There are many websites and repositories where the community shares ready-made prompts.</p>
-<p>One example is the LangSmith hub: <a class="reference external" href="https://smith.langchain.com/hub">https://smith.langchain.com/hub</a>.<br />
-It is part of the LangChain ecosystem. This will be very convenient later, as we’ll see how to fetch prompts hosted there using just a single function.</p>
-</section>
-</section>
-<section id="message-format">
-<h2><span class="section-number">4.6. </span>Message Format<a class="headerlink" href="#message-format" title="Permalink to this heading">#</a></h2>
-<p>A growing use case for LLMs is chat. In a chat context, instead of continuing a single text sequence (as with a standard language model), the model continues a conversation consisting of one or more messages. Each message includes a role, such as “user” or “assistant,” along with the message text.</p>
-<p>The prompt can therefore be structured as shown below. We’ll explore this in more detail when using LangChain, as it provides additional resources to enhance this mode.</p>
-<section id="msg-input-messages">
-<h3><span class="section-number">4.6.1. </span><code class="docutils literal notranslate"><span class="pre">msg</span></code>: Input Messages<a class="headerlink" href="#msg-input-messages" title="Permalink to this heading">#</a></h3>
-<p>This list contains the input message to which we want the model to respond. Each message is a dictionary with the following keys:</p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">role</span></code></strong>:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;user&quot;</span></code> indicates that the message comes from the user.</p></li>
-<li><p>Other roles may include <code class="docutils literal notranslate"><span class="pre">&quot;system&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;assistant&quot;</span></code> if you’re simulating a multi-turn conversation. Different models may use different role names. For Phi 3, these roles are expected.</p></li>
-</ul>
-</li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">content</span></code></strong>:</p>
-<ul>
-<li><p>This contains the actual query or prompt you want the model to respond to.</p></li>
-</ul>
-</li>
-</ul>
-<p>We’ll delve deeper into this mode when we start working with LangChain.</p>
-</section>
 </section>
 </section>
 
@@ -1190,16 +817,7 @@ It is part of the LangChain ecosystem. This will be very convenient later, as we
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-the-output-portuguese">4.4. Generating the Output (portuguese)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#templates-and-prompt-engineering">4.5. Templates and Prompt Engineering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-prompt-engineering">4.5.1. Exploring Prompt Engineering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-results">4.5.2. Improving Results</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-prompts">4.5.3. Where to Find Prompts</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#message-format">4.6. Message Format</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msg-input-messages">4.6.1. <code class="docutils literal notranslate"><span class="pre">msg</span></code>: Input Messages</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#templates-and-prompt-engineering">4.5. Templates and Prompt Engineering</a></li>
 </ul>
 </li>
 </ul>
